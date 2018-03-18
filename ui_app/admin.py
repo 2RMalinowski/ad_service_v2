@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Answer
+from .models import Answer, TempPost
 
 
 class AnswerAdmin(admin.ModelAdmin):
@@ -12,3 +12,13 @@ class AnswerAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Answer, AnswerAdmin)
+
+
+class TempPostAdmin(admin.ModelAdmin):
+    list_display = ('title', 'slug', 'author', 'created')
+
+
+admin.site.register(TempPost, TempPostAdmin)
+
+
+

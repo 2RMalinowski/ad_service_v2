@@ -26,9 +26,8 @@ wheels/
 *.egg
 .idea/
 *.pyc
-answers.ods
-
 auth.py
+answers.ods
 answers.py
 tst.py
 db.sqlite3

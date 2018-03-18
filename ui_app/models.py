@@ -30,3 +30,19 @@ class Answer(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class TempPost(models.Model):
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=300, unique_for_date='created')
+    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    body = models.TextField()
+    created = models.DateTimeField(blank=True, null=True)
+
+    def create(self):
+        self.created_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+            return self.title
+
