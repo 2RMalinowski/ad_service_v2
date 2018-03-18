@@ -35,9 +35,9 @@ class Answer(models.Model):
 class TempPost(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=300, unique_for_date='created')
-    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    author = models.CharField(max_length=200)
     body = models.TextField()
-    created = models.DateTimeField(blank=True, null=True)
+    created = models.DateTimeField(auto_now_add=True)
 
     def create(self):
         self.created_date = timezone.now()
