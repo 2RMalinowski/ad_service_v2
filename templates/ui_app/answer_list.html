@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>answer list</title>
+</head>
+    <body>
+        {% for answer in answers %}
+            <div>
+                <h1><a href="">{{ answer.tmp_desc }}</a></h1>
+                <p>{{ answer.tmp_body|linebreaksbr }}</p>
+                <p>created: {{ answer.created }}</p>
+                <p>updated: {{ answer.updated }}</p>
+            </div>
+        {% endfor %}
+    </body>
+</html>
