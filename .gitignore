@@ -26,6 +26,7 @@ wheels/
 *.egg
 .idea/
 *.pyc
+answers.ods
 
 auth.py
 answers.py
