@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>answer list</title>
-</head>
-    <body>
-        {% for answer in answers %}
-            <div>
-                <h1><a href="">{{ answer.tmp_desc }}</a></h1>
-                <p>{{ answer.tmp_body|linebreaksbr }}</p>
-                <p>created: {{ answer.created }}</p>
-                <p>updated: {{ answer.updated }}</p>
-            </div>
-        {% endfor %}
-    </body>
-</html>
+{% extends "ui_app/base.html" %}
+
+{% block title %}Answers view{% endblock %}
+
+{% block content %}
+  <h1>Answers view</h1>
+  {% for answer in answers %}
+    <h2>
+      <a href="{{ answer.get_absolute_url }}">
+        {{ answer.title }}
+      </a>
+    </h2>
+    <p class="date">
+      Published {{ answer.publish }} by {{ answer.author }}
+    </p>
+    {{ answer.body|truncatewords:200|linebreaks }}
+  {% endfor %}
+{% endblock %}
