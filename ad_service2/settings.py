@@ -1,4 +1,3 @@
-from auth import secret_key, pg_pass
 import dj_database_url
 import os
 
@@ -11,7 +10,7 @@ TEMP_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = secret_key
+SECRET_KEY = os.getenv('SECRET_KEY_AS2')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -70,7 +69,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'ad_service2',
         'USER': 'postgres',
-        'PASSWORD': pg_pass,
+        'PASSWORD': os.getenv('PG_PASS'),
         'HOST': '127.0.0.1',
         'PORT': 5432
     }

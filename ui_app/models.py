@@ -34,12 +34,12 @@ class Answer(models.Model):
     def __str__(self):
         return self.title
 
-    def get_absolute_url(self):
-        return reverse('ui_app:answer_detail',
-                       args=[self.publish.year,
-                             self.publish.strftime('%m'),
-                             self.publish.strftime('%d'),
-                             self.slug])
+    # def get_absolute_url(self):
+    #     return reverse('ui_app:answer_detail',
+    #                    args=[self.publish.year,
+    #                          self.publish.strftime('%m'),
+    #                          self.publish.strftime('%d'),
+    #                          self.slug])
 
 
 class TempPost(models.Model):
