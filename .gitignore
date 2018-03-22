@@ -27,8 +27,8 @@ wheels/
 .idea/
 *.pyc
 auth.py
+app-env
 answers.ods
-answers.py
 tst.py
 db.sqlite3
 

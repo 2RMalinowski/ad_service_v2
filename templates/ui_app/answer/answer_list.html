@@ -1,6 +1,6 @@
 {% extends "ui_app/base.html" %}
 
-{% block title %}Answers view{% endblock %}
+{% block title %}answers view{% endblock %}
 
 {% block content %}
   <h1>Answers view</h1>
@@ -13,6 +13,6 @@
     <p class="date">
       Published {{ answer.publish }} by {{ answer.author }}
     </p>
-    {{ answer.body|truncatewords:200|linebreaks }}
+    {{ answer.body|truncatewords:60|linebreaks }}
   {% endfor %}
 {% endblock %}

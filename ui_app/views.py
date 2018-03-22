@@ -1,5 +1,12 @@
 from django.shortcuts import render, get_object_or_404
+from django.views.generic import ListView
 from .models import Answer
+
+
+class AnswerListView(ListView):
+    queryset = Answer.published.all()
+    context_object_name = 'answers'
+    template_name = 'ui_app/answer/answer_list.html'
 
 
 def answer_list(request):
@@ -16,3 +23,5 @@ def answer_detail(request, year, month, day, answer):
                                publish__day=day)
     return render(request,
                   'ui_app/answer/answer_detail.html', {'answer': answer})
+
+
