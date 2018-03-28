@@ -1,9 +1,9 @@
-{% extends "sub_app/base.html" %}
+{% extends "ui_app/base.html" %}
 
 {% block title %}answers view{% endblock %}
 
 {% block content %}
-  <h1>Answers view</h1>
+  <h1>answers view</h1>
   {% for answer in answers %}
     <h2>
       <a href="{{ answer.get_absolute_url }}">
