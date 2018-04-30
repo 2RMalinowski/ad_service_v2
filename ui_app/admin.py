@@ -17,6 +17,7 @@ admin.site.register(Answer, AnswerAdmin)
 class TempPostAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'author', 'created')
     prepopulated_fields = {'slug': ('title',)}
+    date_hierarchy = 'created'
 
 
 admin.site.register(TempPost, TempPostAdmin)

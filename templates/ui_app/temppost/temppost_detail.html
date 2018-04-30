@@ -1,0 +1,11 @@
+{% extends "ui_app/base.html" %}
+
+{% block title %}{{ temppost.title }}{% endblock %}
+
+{% block content %}
+  <h1>{{ temppost.title }}</h1>
+  <p class="date">
+    Published {{ temppost.publish }} by {{ temppost.author }}
+  </p>
+  {{ temppost.body|linebreaks }}
+{% endblock %}
